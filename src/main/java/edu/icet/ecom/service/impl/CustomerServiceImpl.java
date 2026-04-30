@@ -1,14 +1,21 @@
 package edu.icet.ecom.service.impl;
 
 import edu.icet.ecom.dto.CustomerDTO;
+import edu.icet.ecom.repository.CustomerRepository;
 import edu.icet.ecom.service.CustomerService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@RequiredArgsConstructor
+@Service
 public class CustomerServiceImpl implements CustomerService {
+    final CustomerRepository customerRepository;
+
     @Override
     public boolean addCustomers(CustomerDTO customerDTO) {
-        return false;
+        return customerRepository.addCustomers(customerDTO);
     }
 
     @Override
