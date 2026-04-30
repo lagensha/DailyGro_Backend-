@@ -16,7 +16,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 
     @Override
     public boolean addCustomers(CustomerDTO customerDTO) {
-        String sql = "INSERT INTO customer (id, name, email, phone) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO customers (id, name, email, phoneNumber) VALUES (?, ?, ?, ?)";
         return jdbcTemplate.update(sql,
                 customerDTO.getId(),
                 customerDTO.getName(),
@@ -31,7 +31,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
     }
 
     @Override
-    public boolean deleteCustomer() {
+    public boolean deleteCustomer(String id) {
         return false;
     }
 
