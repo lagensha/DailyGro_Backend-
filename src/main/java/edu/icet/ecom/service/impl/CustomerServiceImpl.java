@@ -20,7 +20,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public boolean updateCustomer(CustomerDTO customerDTO) {
-        return false;
+        return customerRepository.updateCustomer(customerDTO);
     }
 
     @Override
